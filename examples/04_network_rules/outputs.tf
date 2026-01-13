@@ -1,4 +1,4 @@
-// examples/03_file_share_rwx/outputs.tf
+// examples/04_network_rules/outputs.tf
 
 output "storage_account_name" {
   description = "Storage account name."
@@ -15,12 +15,7 @@ output "primary_blob_endpoint" {
   value       = module.storage.primary_blob_endpoint
 }
 
-output "primary_file_endpoint" {
-  description = "Primary file endpoint."
-  value       = module.storage.primary_file_endpoint
-}
-
-output "container_names" {
-  description = "Created blob container names."
-  value       = module.storage.container_names
+output "network_rules_applied" {
+  description = "Indicates that network rules are enforced on the Storage Account."
+  value       = true
 }

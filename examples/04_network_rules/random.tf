@@ -1,4 +1,4 @@
-// examples/03_file_share_rwx/random.tf
+// examples/04_network_rules/random.tf
 
 resource "random_string" "suffix" {
   length  = 6

@@ -1,4 +1,4 @@
-// examples/03_file_share_rwx/providers.tf
+// examples/04_network_rules/providers.tf
 
 terraform {
   required_providers {
