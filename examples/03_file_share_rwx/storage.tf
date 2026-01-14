@@ -1,4 +1,4 @@
-// examples/03_file_share_rwx/main.tf
+// examples/03_file_share_rwx/storage.tf
 
 module "storage" {
   source = "../../"

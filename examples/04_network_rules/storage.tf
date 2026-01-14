@@ -1,4 +1,4 @@
-// examples/04_network_rules/main.tf
+// examples/04_network_rules/storage.tf
 
 module "storage" {
   source = "../../"
