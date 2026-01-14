@@ -29,3 +29,9 @@ output "file_share_names" {
   description = "Created file share names."
   value       = [for k, v in azurerm_storage_share.this : v.name]
 }
+
+output "primary_access_key" {
+  description = "Primary access key for the Storage Account (used by consumers such as VMs mounting Azure Files)."
+  value       = azurerm_storage_account.this.primary_access_key
+  sensitive   = true
+}
