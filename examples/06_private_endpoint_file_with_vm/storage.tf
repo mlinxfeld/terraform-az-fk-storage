@@ -1,7 +1,7 @@
 // examples/06_private_endpoint_file_with_vm/storage.tf
 
 module "storage" {
-  source = "../../"
+  source = "github.com/mlinxfeld/terraform-az-fk-storage"
 
   name                = local.storage_account_name
   location            = azurerm_resource_group.foggykitchen_rg.location

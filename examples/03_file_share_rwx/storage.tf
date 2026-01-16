@@ -1,7 +1,7 @@
 // examples/03_file_share_rwx/storage.tf
 
 module "storage" {
-  source = "../../"
+  source = "github.com/mlinxfeld/terraform-az-fk-storage"
 
   # Storage account names must be lowercase letters and numbers, 3-24 chars
   name                = "${var.name_prefix}${random_string.suffix.result}"
