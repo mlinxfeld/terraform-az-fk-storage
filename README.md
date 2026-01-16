@@ -75,7 +75,7 @@ terraform-az-fk-storage/
 
 ```hcl
 module "storage" {
-  source = "git::https://github.com/mlinxfeld/terraform-az-fk-storage.git?ref=v0.1.0"
+  source = "git::https://github.com/mlinxfeld/terraform-az-fk-storage.git?ref=v1.0.0"
 
   name                = "fksaexample"
   location            = "westeurope"
@@ -126,15 +126,17 @@ module "storage" {
 
 ## 🧩 Related Modules & Courses
 
-- terraform-az-fk-vnet
-- terraform-az-fk-compute
-- terraform-az-fk-aks
-- terraform-oci-fk-oke
+- [terraform-az-fk-vnet](https://github.com/mlinxfeld/terraform-az-fk-vnet)
+- [terraform-az-fk-compute](https://github.com/mlinxfeld/terraform-az-fk-compute)
+- [terraform-az-fk-aks](https://github.com/mlinxfeld/terraform-az-fk-aks)
 
 ---
 
 ## 🪪 License
 
 Licensed under the **Universal Permissive License (UPL), Version 1.0**.
+See [LICENSE](LICENSE) for details.
 
-© 2025 FoggyKitchen.com — Cloud. Code. Clarity.
+---
+
+© 2026 FoggyKitchen.com — Cloud. Code. Clarity.
