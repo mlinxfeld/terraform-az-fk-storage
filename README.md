@@ -2,7 +2,7 @@
 
 This repository contains a reusable **Terraform / OpenTofu module** and progressive examples for deploying **Azure Storage** resources — from basic public access, through network hardening, to fully private access integrated with Virtual Machines.
 
-It is part of the **FoggyKitchen.com training ecosystem** and is designed as a clean, composable **storage layer** that builds on top of an existing Azure networking foundation (VNet, subnets).
+It is part of the **[FoggyKitchen.com](https://foggykitchen.com) training ecosystem** and is designed as a clean, composable **storage layer** that builds on top of an existing Azure networking foundation (VNet, subnets).
 
 ---
 
