@@ -51,6 +51,7 @@ Each of those concerns belongs in its own dedicated module.
 
 ## 📂 Repository Structure
 
+```bash
 terraform-az-fk-storage/
 ├── examples/
 │   ├── 01_basic_storage_account/
@@ -66,11 +67,13 @@ terraform-az-fk-storage/
 ├── versions.tf
 ├── LICENSE
 └── README.md
+```
 
 ---
 
 ## 🚀 Example Usage
 
+```hcl
 module "storage" {
   source = "git::https://github.com/mlinxfeld/terraform-az-fk-storage.git?ref=v0.1.0"
 
@@ -92,6 +95,7 @@ module "storage" {
     env     = "dev"
   }
 }
+```
 
 ---
 
