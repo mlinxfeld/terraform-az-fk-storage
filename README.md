@@ -97,11 +97,15 @@ module "storage" {
 
 ## 📤 Outputs
 
-storage_account_id  
-storage_account_name  
-primary_access_key  
-container_names  
-file_share_names  
+| Output | Description |
+|------|-------------|
+| `storage_account_id` | ID of the created Azure Storage Account. |
+| `storage_account_name` | Name of the created Azure Storage Account. |
+| `primary_blob_endpoint` | Primary Blob service endpoint (public or private, depending on configuration). |
+| `primary_file_endpoint` | Primary File service endpoint (used for Azure Files access). |
+| `container_names` | List of Blob Container names created by the module (if enabled). |
+| `file_share_names` | List of File Share names created by the module (if enabled). |
+| `primary_access_key` | Primary access key for the Storage Account (used by consumers such as VMs mounting Azure Files). |
 
 ---
 
