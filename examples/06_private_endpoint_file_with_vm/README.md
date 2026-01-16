@@ -28,7 +28,7 @@ This example creates:
 - One **Azure Storage Account (StorageV2)**
 - One **Azure File Share (RWX)**
 - One **Private Endpoint** for the **File** subresource
-- One **Private DNS Zone** (`privatelink.file.core.windows.net`)
+- One **Private DNS Zone** (`fksaxxxxxx.file.core.windows.net`)
 - A **VNet link** for private DNS resolution
 - Two **private Linux Virtual Machines**
 - Azure Files mounted via **SMB over Private Endpoint**
@@ -103,7 +103,7 @@ confirming shared access.
 
 The output confirms that:
 - the Azure File Share is mounted using **SMB 3.0**,
-- the mount uses the **`file.core.windows.net` endpoint**,
+- the mount uses the **`fksaxxxxxx.file.core.windows.net` endpoint**,
 - access is resolved privately through the Virtual Network and Private DNS.
 ---
 
