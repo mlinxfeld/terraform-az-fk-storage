@@ -4,8 +4,8 @@ module "storage" {
   source = "../../"
 
   name                = local.storage_account_name
-  resource_group_name = var.resource_group_name
-  location            = var.location
+  location            = azurerm_resource_group.foggykitchen_rg.location
+  resource_group_name = azurerm_resource_group.foggykitchen_rg.name
 
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
@@ -15,8 +15,19 @@ module "storage" {
   https_traffic_only_enabled = true
   min_tls_version            = "TLS1_2"
 
-# Private-only access
-  public_network_access_enabled = false
+  public_network_access_enabled = true
+  enable_network_rules = true
+
+  network_rules = {
+    default_action = "Deny"
+    ip_rules = [
+      var.my_public_ip
+    ]
+    virtual_network_subnet_ids = [
+      module.vnet.subnet_ids["fk-subnet-private-vm"]
+    ]
+    bypass = ["AzureServices"]
+  }
 
   # We create a File Share in this example
   create_file_shares = true 
@@ -24,7 +35,8 @@ module "storage" {
 
   # keep example focused
   create_containers    = false
-  enable_network_rules = false
 
   tags = var.tags
+
+  depends_on = [module.vnet]
 }

@@ -5,8 +5,8 @@ module "compute" {
   source = "github.com/mlinxfeld/terraform-az-fk-compute"
 
   name                = "${var.vm_name_prefix}${count.index + 1}"
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  location            = azurerm_resource_group.foggykitchen_rg.location
+  resource_group_name = azurerm_resource_group.foggykitchen_rg.name
 
   deployment_mode = "vm"
   subnet_id        = module.vnet.subnet_ids["fk-subnet-private-vm"]
@@ -21,4 +21,6 @@ module "compute" {
   custom_data = local.vm_cloud_init
 
   tags = var.tags
+  
+  depends_on = [module.storage]
 }

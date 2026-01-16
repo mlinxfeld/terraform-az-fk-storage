@@ -2,8 +2,8 @@
 
 resource "azurerm_private_endpoint" "fk_file_pe" {
   name                = "${local.storage_account_name}-pe-file"
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  location            = azurerm_resource_group.foggykitchen_rg.location
+  resource_group_name = azurerm_resource_group.foggykitchen_rg.name
   subnet_id           = module.vnet.subnet_ids["fk-subnet-private-endpoints"]
   tags                = var.tags
 

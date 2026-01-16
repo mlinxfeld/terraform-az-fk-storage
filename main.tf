@@ -25,16 +25,6 @@ resource "azurerm_storage_account" "this" {
   public_network_access_enabled   = var.public_network_access_enabled
   allow_nested_items_to_be_public = false
 
-  dynamic "network_rules" {
-    for_each = local.network_rules_enabled ? [1] : []
-    content {
-      default_action             = var.network_rules.default_action
-      bypass                     = try(var.network_rules.bypass, ["AzureServices"])
-      ip_rules                   = try(var.network_rules.ip_rules, [])
-      virtual_network_subnet_ids = try(var.network_rules.virtual_network_subnet_ids, [])
-    }
-  }
-
   tags = var.tags
 }
 
@@ -55,4 +45,22 @@ resource "azurerm_storage_share" "this" {
   quota                = each.value.quota_gb
   access_tier          = try(each.value.access_tier, null)
   metadata             = try(each.value.metadata, {})
+
+  depends_on = [
+    azurerm_storage_account_network_rules.this
+  ]
+}
+
+resource "azurerm_storage_account_network_rules" "this" {
+  count              = var.enable_network_rules ? 1 : 0
+  storage_account_id = azurerm_storage_account.this.id
+
+  default_action             = var.network_rules.default_action
+  ip_rules                   = var.network_rules.ip_rules
+  virtual_network_subnet_ids = var.network_rules.virtual_network_subnet_ids
+  bypass                     = var.network_rules.bypass
+
+  depends_on = [
+    azurerm_storage_account.this
+  ]
 }

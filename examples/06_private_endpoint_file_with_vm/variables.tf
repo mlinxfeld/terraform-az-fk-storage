@@ -30,6 +30,7 @@ variable "tags" {
   }
 }
 
+
 # ---- Storage baseline knobs ----
 variable "account_tier" {
   type        = string
@@ -125,4 +126,10 @@ variable "vnet_name" {
   description = "Existing VNet Name to link the Private DNS Zone to."
   type        = string
   default     = "fk-vnet"
+}
+
+variable "my_public_ip" {
+  description = "Your current public IP address for firewall exception"
+  type        = string
+  default     = ""
 }
