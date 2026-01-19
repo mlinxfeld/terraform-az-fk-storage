@@ -12,6 +12,7 @@ module "vnet" {
   subnets = {
     fk-subnet-private-endpoints = {
         address_prefixes = ["10.10.20.0/24"]
+        service_endpoints = ["Microsoft.Storage"]
     }
   }
 

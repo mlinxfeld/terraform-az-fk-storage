@@ -60,3 +60,42 @@ variable "vnet_name" {
   type        = string
   default     = "fk-vnet"
 }
+
+variable "containers" {
+  description = <<EOT
+Blob containers to create.
+
+access_type:
+- private   (recommended default)
+- blob
+- container
+
+Example:
+containers = {
+  logs      = { access_type = "private",  metadata = { purpose = "logs" } }
+  artifacts = { access_type = "private" }
+  public    = { access_type = "blob" }
+}
+EOT
+  type = map(object({
+    access_type = optional(string, "private")
+    metadata    = optional(map(string), {})
+  }))
+  default = {
+    logs = {
+      access_type = "private"
+      metadata = {
+        purpose = "logs"
+      }
+    }
+    artifacts = {
+      access_type = "private"
+    }
+  }
+}
+
+variable "my_public_ip" {
+  description = "Your current public IP address for firewall exception"
+  type        = string
+  default     = ""
+}
