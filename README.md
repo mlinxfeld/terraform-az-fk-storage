@@ -2,7 +2,7 @@
 
 This repository contains a reusable **Terraform / OpenTofu module** and progressive examples for deploying **Azure Storage** resources — from basic public access, through network hardening, to fully private access integrated with Virtual Machines.
 
-It is part of the **[FoggyKitchen.com](https://foggykitchen.com) training ecosystem** and is designed as a clean, composable **storage layer** that builds on top of an existing Azure networking foundation (VNet, subnets).
+It is part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.com/courses-2/)** and is designed as a clean, composable **storage layer** that builds on top of an existing Azure networking foundation (VNet, subnets).
 
 ---
 
@@ -124,10 +124,13 @@ module "storage" {
 
 ---
 
-## 🧩 Related Modules & Courses
+## 🧩 Related Modules & Training
 
 - [terraform-az-fk-vnet](https://github.com/mlinxfeld/terraform-az-fk-vnet)
 - [terraform-az-fk-compute](https://github.com/mlinxfeld/terraform-az-fk-compute)
+- [terraform-az-fk-nsg](https://github.com/mlinxfeld/terraform-az-fk-nsg)
+- [terraform-az-fk-loadbalancer](https://github.com/mlinxfeld/terraform-az-fk-loadbalancer)
+- [terraform-az-fk-disk](https://github.com/mlinxfeld/terraform-az-fk-disk)
 - [terraform-az-fk-aks](https://github.com/mlinxfeld/terraform-az-fk-aks)
 
 ---
