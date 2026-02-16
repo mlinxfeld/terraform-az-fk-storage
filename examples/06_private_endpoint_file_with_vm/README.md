@@ -30,7 +30,7 @@ This example creates:
 - One **Private Endpoint** for the **File** subresource via `terraform-az-fk-private-endpoint`
 - One **Private DNS Zone** (`privatelink.file.core.windows.net`)
 - A **VNet link** for private DNS resolution
-- Two **private Linux Virtual Machines**
+- Two **private Linux Virtual Machines** via `terraform-az-fk-compute`
 - Azure Files mounted via **SMB over Private Endpoint**
 - HTTPS-only access
 - Minimum TLS version enforced
