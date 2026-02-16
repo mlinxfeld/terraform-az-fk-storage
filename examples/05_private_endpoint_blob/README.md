@@ -23,9 +23,9 @@ Blob Containers are created to represent **intended data usage**
 <img src="05-private-endpoint-blob-architecture.png" width="900"/>
 
 This example creates:
-- One **Azure Storage Account (StorageV2)**
-- Two **private Blob Containers** (e.g. `artifacts`, `logs`)
-- One **Private Endpoint** for the **Blob** subresource
+- One **Azure Storage Account (StorageV2)** via `terraform-az-fk-storage`
+- Two **private Blob Containers** (e.g. `artifacts`, `logs`) via `terraform-az-fk-storage`
+- One **Private Endpoint** for the **Blob** subresource via `terraform-az-fk-private-endpoint`
 - One **Private DNS Zone** (`privatelink.blob.core.windows.net`)
 - A **VNet link** for private DNS resolution
 - HTTPS-only access

@@ -14,7 +14,6 @@ It focuses on:
 - Azure Storage Accounts (StorageV2)
 - Blob Containers and File Shares
 - Network Rules and access boundaries
-- Private Endpoints and Private DNS
 - Real consumers (Virtual Machines) accessing storage privately
 
 This is **not** a full landing zone or opinionated enterprise platform.
@@ -30,7 +29,6 @@ Depending on configuration and example used, the module can create:
 - Blob Containers
 - File Shares
 - Network Rules (IP / VNet allowlists)
-- Private Endpoints (Blob, File)
 - Integration with:
   - Azure Virtual Networks
   - Private DNS Zones
@@ -43,6 +41,7 @@ The module intentionally does **not** create:
 - Bastion
 - Load Balancers
 - AKS clusters
+- Private Endpoints (handled by `terraform-az-fk-private-endpoint`)
 - Monitoring or backup resources
 
 Each of those concerns belongs in its own dedicated module.
@@ -129,6 +128,7 @@ module "storage" {
 - [terraform-az-fk-vnet](https://github.com/mlinxfeld/terraform-az-fk-vnet)
 - [terraform-az-fk-compute](https://github.com/mlinxfeld/terraform-az-fk-compute)
 - [terraform-az-fk-nsg](https://github.com/mlinxfeld/terraform-az-fk-nsg)
+- [terraform-az-fk-private-endpoint](https://github.com/mlinxfeld/terraform-az-fk-private-endpoint)
 - [terraform-az-fk-loadbalancer](https://github.com/mlinxfeld/terraform-az-fk-loadbalancer)
 - [terraform-az-fk-disk](https://github.com/mlinxfeld/terraform-az-fk-disk)
 - [terraform-az-fk-aks](https://github.com/mlinxfeld/terraform-az-fk-aks)

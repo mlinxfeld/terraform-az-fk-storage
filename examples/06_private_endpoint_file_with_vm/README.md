@@ -25,10 +25,10 @@ and is resolved using **Private DNS**.
 <img src="06-private-endpoint-file-with-vm-architecture.png" width="900"/>
 
 This example creates:
-- One **Azure Storage Account (StorageV2)**
-- One **Azure File Share (RWX)**
-- One **Private Endpoint** for the **File** subresource
-- One **Private DNS Zone** (`fksaxxxxxx.file.core.windows.net`)
+- One **Azure Storage Account (StorageV2)** via `terraform-az-fk-storage`
+- One **Azure File Share (RWX)** via `terraform-az-fk-storage`
+- One **Private Endpoint** for the **File** subresource via `terraform-az-fk-private-endpoint`
+- One **Private DNS Zone** (`privatelink.file.core.windows.net`)
 - A **VNet link** for private DNS resolution
 - Two **private Linux Virtual Machines**
 - Azure Files mounted via **SMB over Private Endpoint**
@@ -118,4 +118,3 @@ tofu destroy
 ## 🪪 License
 
 Licensed under the **Universal Permissive License (UPL), Version 1.0**.
-
