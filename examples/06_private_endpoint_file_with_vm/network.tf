@@ -1,7 +1,7 @@
 // examples/06_private_endpoint_file_with_vm/network.tf
 
 module "vnet" {
-  source = "git::https://github.com/mlinxfeld/terraform-az-fk-vnet.git?ref=v0.1.1"
+  source = "github.com/mlinxfeld/terraform-az-fk-vnet"
 
   name                = var.vnet_name
   location            = azurerm_resource_group.foggykitchen_rg.location

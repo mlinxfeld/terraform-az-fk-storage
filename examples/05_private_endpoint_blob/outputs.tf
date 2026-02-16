@@ -12,12 +12,12 @@ output "storage_account_id" {
 
 output "private_endpoint_id" {
   description = "Private Endpoint resource ID."
-  value       = azurerm_private_endpoint.fk_blob_pe.id
+  value       = module.private_endpoint_blob.private_endpoint_id
 }
 
 output "private_endpoint_private_ip" {
   description = "Private IP address assigned to the Private Endpoint (Blob)."
-  value       = azurerm_private_endpoint.fk_blob_pe.private_service_connection[0].private_ip_address
+  value       = length(module.private_endpoint_blob.private_ip_addresses) > 0 ? module.private_endpoint_blob.private_ip_addresses[0] : null
 }
 
 output "private_dns_zone_name" {

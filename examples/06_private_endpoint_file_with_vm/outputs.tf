@@ -11,12 +11,12 @@ output "file_share_name" {
 }
 
 output "private_endpoint_id" {
-  value       = azurerm_private_endpoint.fk_file_pe.id
+  value       = module.private_endpoint_file.private_endpoint_id
   description = "Private Endpoint (file) ID."
 }
 
 output "private_endpoint_private_ip" {
-  value       = azurerm_private_endpoint.fk_file_pe.private_service_connection[0].private_ip_address
+  value       = length(module.private_endpoint_file.private_ip_addresses) > 0 ? module.private_endpoint_file.private_ip_addresses[0] : null
   description = "Private IP of the Private Endpoint NIC."
 }
 
