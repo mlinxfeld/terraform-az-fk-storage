@@ -15,7 +15,8 @@ No compute resources are attached.
 
 This deployment creates a single **Azure Storage Account**
 exposed through a **Private Endpoint** for the Blob service,
-with private name resolution handled by **Azure Private DNS**.
+with private name resolution handled by **Azure Private DNS**
+via the `terraform-az-fk-private-dns` module.
 
 Blob Containers are created to represent **intended data usage**
 (e.g. artifacts and logs), even though no consumers are attached yet.
@@ -26,8 +27,8 @@ This example creates:
 - One **Azure Storage Account (StorageV2)** via `terraform-az-fk-storage`
 - Two **private Blob Containers** (e.g. `artifacts`, `logs`) via `terraform-az-fk-storage`
 - One **Private Endpoint** for the **Blob** subresource via `terraform-az-fk-private-endpoint`
-- One **Private DNS Zone** (`privatelink.blob.core.windows.net`)
-- A **VNet link** for private DNS resolution
+- One **Private DNS Zone** (`privatelink.blob.core.windows.net`) via `terraform-az-fk-private-dns`
+- A **VNet link** for private DNS resolution via `terraform-az-fk-private-dns`
 - HTTPS-only access
 - Minimum TLS version enforced
 - Network Rules with `default_action = Deny`

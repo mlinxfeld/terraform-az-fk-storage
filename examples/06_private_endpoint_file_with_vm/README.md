@@ -16,7 +16,8 @@ through a **Private Endpoint**, proving **ReadWriteMany (RWX)** semantics in pra
 
 This deployment creates a single **Azure Storage Account**
 with an **Azure File Share** exposed via a **Private Endpoint**
-and consumed by **two private Virtual Machines**.
+and consumed by **two private Virtual Machines**,
+with private name resolution handled by `terraform-az-fk-private-dns`.
 
 The public endpoint exists only for controlled bootstrap access (Terraform),
 while all workload traffic flows privately through the Azure backbone
@@ -28,8 +29,8 @@ This example creates:
 - One **Azure Storage Account (StorageV2)** via `terraform-az-fk-storage`
 - One **Azure File Share (RWX)** via `terraform-az-fk-storage`
 - One **Private Endpoint** for the **File** subresource via `terraform-az-fk-private-endpoint`
-- One **Private DNS Zone** (`privatelink.file.core.windows.net`)
-- A **VNet link** for private DNS resolution
+- One **Private DNS Zone** (`privatelink.file.core.windows.net`) via `terraform-az-fk-private-dns`
+- A **VNet link** for private DNS resolution via `terraform-az-fk-private-dns`
 - Two **private Linux Virtual Machines** via `terraform-az-fk-compute`
 - Azure Files mounted via **SMB over Private Endpoint**
 - HTTPS-only access
