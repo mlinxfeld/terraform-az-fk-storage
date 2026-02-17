@@ -20,6 +20,11 @@ output "private_endpoint_private_ip" {
   description = "Private IP of the Private Endpoint NIC."
 }
 
+output "private_dns_zone_name" {
+  value       = module.private_dns.private_dns_zone_names[0]
+  description = "Private DNS zone used for File Private Link."
+}
+
 output "vm_private_ips" {
   value       = module.compute[*].vm_private_ip
   description = "Private IPs of the two VMs."

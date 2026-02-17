@@ -22,5 +22,5 @@ output "private_endpoint_private_ip" {
 
 output "private_dns_zone_name" {
   description = "Private DNS zone used for Blob Private Link."
-  value       = azurerm_private_dns_zone.fk_blob_dns_zone.name
+  value       = module.private_dns.private_dns_zone_names[0]
 }

@@ -13,11 +13,11 @@ module "private_endpoint_file" {
   is_manual_connection           = false
 
   private_dns_zone_group_name = "default"
-  private_dns_zone_ids        = [azurerm_private_dns_zone.fk_file_dns_zone.id]
+  private_dns_zone_ids        = [module.private_dns.private_dns_zone_ids[local.dns_zone_name]]
 
   tags = var.tags
 
   depends_on = [
-    azurerm_private_dns_zone_virtual_network_link.fk_file_dns_zone_link
+    module.private_dns
   ]
 }
