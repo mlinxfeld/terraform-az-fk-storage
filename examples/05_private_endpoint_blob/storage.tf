@@ -1,7 +1,7 @@
 // examples/05_private_endpoint_blob/storage.tf
 
 module "storage" {
-  source = "github.com/foggykitchen/terraform-az-fk-storage"
+  source = "github.com/mlinxfeld/terraform-az-fk-storage"
 
   name                = local.storage_account_name
   resource_group_name = var.resource_group_name

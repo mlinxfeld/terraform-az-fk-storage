@@ -1,7 +1,7 @@
 // examples/05_private_endpoint_blob/private_endpoints.tf
 
 module "private_endpoint_blob" {
-  source = "github.com/foggykitchen/terraform-az-fk-private-endpoint"
+  source = "github.com/mlinxfeld/terraform-az-fk-private-endpoint"
 
   name                = local.pe_name
   location            = var.location
