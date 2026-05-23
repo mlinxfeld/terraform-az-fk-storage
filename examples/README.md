@@ -99,4 +99,4 @@ See `LICENSE` for details.
 
 ---
 
-© 2026 FoggyKitchen.com — Cloud. Code. Clarity.
+© 2026 [FoggyKitchen.com](https://foggykitchen.com) - Cloud. Code. Clarity.
